@@ -12,7 +12,7 @@ package com.derekvonk.OOP1.practicumopdracht3;
  */
 public class Persoon extends Bedrijf {
     
-    private String naam = "";
+    private String naam;
     
     /**
      * Default constructor
@@ -34,6 +34,7 @@ public class Persoon extends Bedrijf {
      * @return double
      */
     public double salaris() {
+        System.out.println("Een 'Persoon' heeft geen salaris.");
         return 0;
     }
     

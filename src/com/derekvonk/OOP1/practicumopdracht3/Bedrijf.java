@@ -13,8 +13,8 @@ import java.util.ArrayList;
  */
 public class Bedrijf {
     
-    private ArrayList<String> werknemers = new ArrayList<>();
-    private String naam = "";
+    private ArrayList<String> werknemers;
+    private String naam;
     
     /**
      * Default constructor for Bedrijf Object
@@ -57,6 +57,7 @@ public class Bedrijf {
      * Method returns a String representation of input
      * @return String
      */
+    @Override
     public String toString() {
         return "";
     }
