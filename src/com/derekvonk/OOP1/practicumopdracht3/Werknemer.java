@@ -42,6 +42,6 @@ public class Werknemer extends Persoon {
      */
     @Override
     public String toString() {
-        return super.toString() + "; Werknemer";
+        return super.toString() + "; Werknemer #" + volgnummer;
     }
 }

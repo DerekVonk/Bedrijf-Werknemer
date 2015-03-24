@@ -13,11 +13,11 @@ package com.derekvonk.OOP1.practicumopdracht3;
 public class Manager extends Werknemer {
     
     private double bonus;
-    private int count = 0;
+    //private int count = 0;
 
     public Manager(double maandSalaris, int volgnummer, String naam) {
         super(maandSalaris, volgnummer, naam);
-        count++;
+        //count++;
     }
     
     /**

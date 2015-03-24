@@ -36,14 +36,25 @@ public class Bedrijf {
      * Method
      */
     public void betaalSalarissen() {
+        System.out.println("Uitbetaling van Salarissen als volgt:"
+                + "\n--------------------------------");
         for (Persoon werknemer : werknemers) {
-            System.out.println(werknemer.salaris());
-            
-            
-            if (werknemer instanceof Persoon) {
-                System.out.println("Een 'Persoon' krijgt geen salaris");
-            } else {
-                System.out.println("Dit is geen Zzper.");
+           
+            if (werknemer instanceof Manager) {
+                System.out.println(werknemer.toString() + 
+                        ", Salaris + Bonus: €" + werknemer.salaris());
+            } else if (werknemer instanceof Zzper) {
+                System.out.println(werknemer.toString() + 
+                        ", Salaris gebaseeerd op uurtarief: €" + werknemer.salaris());
+            } else if (werknemer instanceof Werknemer) {
+                System.out.println(werknemer.toString() + 
+                        ", Maandsalaris: €" + werknemer.salaris());
+            } else if (werknemer instanceof Vrijwilliger) {
+                System.out.println(werknemer.toString() + 
+                        ", Salaris: €" + werknemer.salaris());
+            } else if (werknemer instanceof Persoon) {
+                System.out.println("Een Persoon zonder functie heeft geen"
+                        + " salaris.");
             }
         }
     }
@@ -53,7 +64,14 @@ public class Bedrijf {
      * @return Integer
      */
     public int aantalManagers() {
-        return 0;
+        int count = 0;
+        
+        for (Persoon werknemer : werknemers) {
+            if (werknemer instanceof Manager) {
+                count++;
+            }
+        }
+        return count;
     }
     
     /**
@@ -78,7 +96,8 @@ public class Bedrijf {
         for (int i = 0; i < werknemers.size(); i++) {
             sb.append("\n" + werknemers.get(i).toString());
         }
-        return sb.toString();
+        return sb.toString() + "\n-----------------------\n"
+                + "Aantal managers: " + aantalManagers();
         
     }
 }

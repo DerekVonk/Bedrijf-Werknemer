@@ -23,17 +23,22 @@ public class Main {
         Vrijwilliger vrij1 = new Vrijwilliger("Iris");
         Zzper zzper1 = new Zzper(40, "Audrey");
         
+        bedrijf.neemInDienst(persoon1);
         bedrijf.neemInDienst(vrij1);
-        bedrijf.neemInDienst(werknemer2);
         bedrijf.neemInDienst(manager1);
+        bedrijf.neemInDienst(werknemer2);
         bedrijf.neemInDienst(manager2);
         bedrijf.neemInDienst(zzper1);
         
-        System.out.println(bedrijf);
+        zzper1.voegWerkUrenToe(20);
         
+        System.out.println(bedrijf);
         System.out.println("");
         
         bedrijf.betaalSalarissen();
+        
+        
+        //System.out.println("\nAantal managers: " + bedrijf.aantalManagers());
         
     }
     

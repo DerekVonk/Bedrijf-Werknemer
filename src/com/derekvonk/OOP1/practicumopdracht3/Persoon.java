@@ -36,7 +36,7 @@ public class Persoon {
      * @return double
      */
     public double salaris() {
-        System.out.println("Een 'Persoon' heeft geen salaris.");
+        System.out.println("Een 'Persoon' zonder functie heeft geen salaris.");
         return 0;
     }
     
