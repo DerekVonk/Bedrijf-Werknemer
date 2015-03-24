@@ -25,6 +25,8 @@ public class Werknemer extends Persoon {
         super(naam);
         this.maandSalaris = maandSalaris;
         this.volgnummer = volgnummer;
+        System.out.println("Werknemer " + naam + " is aangemaakt.");
+        
     }
     
     /**
@@ -42,6 +44,6 @@ public class Werknemer extends Persoon {
      */
     @Override
     public String toString() {
-        return "";
+        return "\nSalaris: €" + salaris();
     }
 }

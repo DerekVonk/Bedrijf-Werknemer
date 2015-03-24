@@ -13,9 +13,19 @@ package com.derekvonk.OOP1.practicumopdracht3;
 public class Manager extends Werknemer {
     
     private double bonus;
+    private int count = 0;
 
     public Manager(double maandSalaris, int volgnummer, String naam) {
         super(maandSalaris, volgnummer, naam);
+        count++;
+    }
+    
+    /**
+     * getter method for maandSalaris of super class Werknemer
+     * @return double
+     */
+    public double getMaandSalaris() {
+        return super.salaris();
     }
     
     /**
@@ -24,7 +34,7 @@ public class Manager extends Werknemer {
      */ 
     @Override
     public double salaris() {
-        return 0;
+        return bonus + getMaandSalaris();
     }
     
     /**
@@ -32,7 +42,7 @@ public class Manager extends Werknemer {
      * @param bonus double
      */
     public void kenBonusToe(double bonus) {
-        
+        this.bonus = bonus;
     }
     
     /**

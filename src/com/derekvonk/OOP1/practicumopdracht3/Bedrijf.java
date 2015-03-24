@@ -13,7 +13,7 @@ import java.util.ArrayList;
  */
 public class Bedrijf {
     
-    private ArrayList<String> werknemers;
+    private ArrayList<Persoon> werknemers = new ArrayList<>();
     private String naam;
     
     /**
@@ -29,13 +29,23 @@ public class Bedrijf {
      */
     public Bedrijf(String naam) {
         this.naam = naam;
+        //hoe doe ik een arraylist implementatie van Persoon??
+         
     } 
   
     /**
      * Method
      */
     public void betaalSalarissen() {
-        
+        for (Persoon werknemer : werknemers) {
+            System.out.println(werknemer.salaris());
+            
+            if (werknemer instanceof Zzper) {
+                System.out.println("Ja dit is een instance of ZZper");
+            } else {
+                System.out.println("Dit is geen Zzper.");
+            }
+        }
     }
     
     /**
@@ -47,18 +57,19 @@ public class Bedrijf {
     }
     
     /**
-     * Method passes an object in to ...
+     * Method adds an object Persoon in to arraylist of Bedrijf
+     * @param persoon Object of 'Persoon' Class
      */
     public void neemInDienst(Persoon persoon) {
-        
+        this.werknemers.add(persoon);
     }
     
     /**
-     * Method returns a String representation of input
+     * Method returns a String representation of Bedrijf object
      * @return String
      */
     @Override
     public String toString() {
-        return "";
+        return ("Naam van bedrijf: " + naam + "\n" + werknemers);
     }
 }

@@ -15,6 +15,7 @@ public class Vrijwilliger extends Persoon {
     
     public Vrijwilliger(String naam) {
         super(naam);
+        System.out.println("Vrijwilliger " + naam + " is aangemaakt.");
     }
     
     @Override
@@ -25,7 +26,7 @@ public class Vrijwilliger extends Persoon {
     
     @Override
     public String toString() {
-        return "";
+        return "\nSalaris: €" + salaris();
     }
     
 }
