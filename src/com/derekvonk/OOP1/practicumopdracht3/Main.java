@@ -20,10 +20,10 @@ public class Main {
         Persoon manager1 = new Manager(2500, 2, persoon1.toString());
         Persoon manager2 = new Manager(3000, 3, "Derek");
         
-        bedrijf.neemInDienst(persoon1);
+        //bedrijf.neemInDienst(persoon1);
         bedrijf.neemInDienst(werknemer1);
-        //bedrijf.neemInDienst(manager1);
-        //bedrijf.neemInDienst(manager2);
+        bedrijf.neemInDienst(manager1);
+        bedrijf.neemInDienst(manager2);
         
         
         System.out.println(bedrijf);
