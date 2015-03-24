@@ -47,6 +47,6 @@ public class Zzper extends Persoon {
      */
     @Override
     public String toString() {
-        return "";
+        return super.toString() + "; ZZPer";
     }
 }

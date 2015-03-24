@@ -15,18 +15,17 @@ public class Vrijwilliger extends Persoon {
     
     public Vrijwilliger(String naam) {
         super(naam);
-        System.out.println("Vrijwilliger " + naam + " is aangemaakt.");
     }
     
     @Override
     public double salaris() {
-        System.out.println("Een Vrijwilliger krijgt geen salaris");
+        //System.out.println("Een Vrijwilliger krijgt geen salaris");
         return 0;
     }
     
     @Override
     public String toString() {
-        return "\nSalaris: €" + salaris();
+        return super.toString() + "; Vrijwilliger";
     }
     
 }

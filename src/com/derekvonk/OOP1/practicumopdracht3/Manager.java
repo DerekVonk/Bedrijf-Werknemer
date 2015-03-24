@@ -27,7 +27,7 @@ public class Manager extends Werknemer {
     public double getMaandSalaris() {
         return super.salaris();
     }
-    
+        
     /**
      * Method for calculating salaris
      * @return double
@@ -51,7 +51,7 @@ public class Manager extends Werknemer {
      */ 
     @Override
     public String toString() {
-        return super.toString();
+        return super.toString() + " - Manager";
     }
     
     

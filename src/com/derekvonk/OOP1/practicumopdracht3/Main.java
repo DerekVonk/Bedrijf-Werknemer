@@ -16,37 +16,24 @@ public class Main {
         Bedrijf bedrijf = new Bedrijf("VONK&CO");
         
         Persoon persoon1 = new Persoon("Derek");
-        Persoon werknemer1 = new Werknemer(2500, 1, persoon1.toString());
-        Persoon manager1 = new Manager(2500, 2, persoon1.toString());
-        Persoon manager2 = new Manager(3000, 3, "Derek");
+        Werknemer werknemer1 = new Werknemer(2500, 1, persoon1.toString());
+        Werknemer werknemer2 = new Werknemer(1500, 2, "Sam");
+        Manager manager1 = new Manager(2500, 1, persoon1.toString());
+        Manager manager2 = new Manager(3000, 3, "Sven");
+        Vrijwilliger vrij1 = new Vrijwilliger("Iris");
+        Zzper zzper1 = new Zzper(40, "Audrey");
         
-        //bedrijf.neemInDienst(persoon1);
-        bedrijf.neemInDienst(werknemer1);
+        bedrijf.neemInDienst(vrij1);
+        bedrijf.neemInDienst(werknemer2);
         bedrijf.neemInDienst(manager1);
         bedrijf.neemInDienst(manager2);
-        
+        bedrijf.neemInDienst(zzper1);
         
         System.out.println(bedrijf);
         
-        //System.out.println(manager1.salaris());
+        System.out.println("");
         
-        
-        
-//        Persoon persoon = new Werknemer(2500, 1, "Michel");
-//        bedrijf.neemInDienst(persoon);
-//        System.out.println(persoon);
-//        System.out.println(persoon.salaris());
-//        
-//        Vrijwilliger testVrijw = new Vrijwilliger("Derek");
-//        System.out.println(testVrijw);
-//        Werknemer testWerk = new Werknemer(2500, 1, "Derek");
-//        System.out.println(testWerk);
-//        
-//        
-//        Zzper zelfstandige = new Zzper(30, "Mike");
-//        bedrijf.neemInDienst(zelfstandige);
-//        bedrijf.betaalSalarissen();
-//        
+        bedrijf.betaalSalarissen();
         
     }
     

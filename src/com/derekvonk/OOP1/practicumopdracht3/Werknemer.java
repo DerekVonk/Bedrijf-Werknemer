@@ -42,6 +42,6 @@ public class Werknemer extends Persoon {
      */
     @Override
     public String toString() {
-        return super.toString() + ", Salaris: €" + salaris();
+        return super.toString() + "; Werknemer";
     }
 }

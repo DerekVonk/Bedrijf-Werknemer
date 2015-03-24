@@ -29,7 +29,6 @@ public class Bedrijf {
      */
     public Bedrijf(String naam) {
         this.naam = naam;
-        //hoe doe ik een arraylist implementatie van Persoon??
          
     } 
   
@@ -40,8 +39,9 @@ public class Bedrijf {
         for (Persoon werknemer : werknemers) {
             System.out.println(werknemer.salaris());
             
-            if (werknemer instanceof Zzper) {
-                System.out.println("Ja dit is een instance of ZZper");
+            
+            if (werknemer instanceof Persoon) {
+                System.out.println("Een 'Persoon' krijgt geen salaris");
             } else {
                 System.out.println("Dit is geen Zzper.");
             }
