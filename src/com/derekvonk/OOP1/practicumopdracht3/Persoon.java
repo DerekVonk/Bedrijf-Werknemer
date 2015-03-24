@@ -46,7 +46,7 @@ public class Persoon {
      */
     @Override
     public String toString() {
-        return ("Naam van Persoon is: " + naam);
+        return "Naam: " + naam;
     }
     
     

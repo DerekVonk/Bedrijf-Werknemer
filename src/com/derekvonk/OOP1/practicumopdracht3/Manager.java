@@ -51,7 +51,7 @@ public class Manager extends Werknemer {
      */ 
     @Override
     public String toString() {
-        return "";
+        return super.toString();
     }
     
     

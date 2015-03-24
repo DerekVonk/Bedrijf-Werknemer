@@ -70,6 +70,15 @@ public class Bedrijf {
      */
     @Override
     public String toString() {
-        return ("Naam van bedrijf: " + naam + "\n" + werknemers);
+            
+        StringBuilder sb = new StringBuilder(); 
+        System.out.println("Naam bedrijf: " +
+                naam + "\n-------------------------" + 
+                "\nWerknemers: ");
+        for (int i = 0; i < werknemers.size(); i++) {
+            sb.append("\n" + werknemers.get(i).toString());
+        }
+        return sb.toString();
+        
     }
 }
