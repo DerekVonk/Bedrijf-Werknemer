@@ -29,16 +29,29 @@ public class Zzper extends Persoon {
     }
     
     /**
-     * Method returns Salaris calculated
+     * setter method for urenGewerkt back to zero
+     */
+    public void setUrenGewerktOpNul() {
+        urenGewerkt = 0;
+    }
+    
+    /**
+     * getter methoed for maandSalaris, calculates urenTarief * urenGewerkt
+     * @return double
+     */
+    public double getMaandSalaris() {
+        return uurTarief * urenGewerkt;
+    }
+    
+    /**
+     * Method returns getMaandSalaris() and calls setUrenGewerktOpNul()
      * @return double
      */
     @Override
     public double salaris() {
-        //if (betaalSalarissen is true(?) )
-        // urenGewerkt = 0;
-        // else {
-        return uurTarief * urenGewerkt;
-        
+        double temp = getMaandSalaris();
+        setUrenGewerktOpNul();
+        return temp;
     }
     
     /**

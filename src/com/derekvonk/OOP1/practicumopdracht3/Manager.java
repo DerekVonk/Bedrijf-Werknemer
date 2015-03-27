@@ -25,6 +25,9 @@ public class Manager extends Werknemer {
      * @return double
      */
     public double getMaandSalaris() {
+        // when Method is called, first reset Bonus to zero
+        setBonusOpNul();
+        //System.out.println("Bonus Manager is uitbetaalt.");
         return super.salaris();
     }
         
@@ -35,6 +38,7 @@ public class Manager extends Werknemer {
     @Override
     public double salaris() {
         return bonus + getMaandSalaris();
+        
     }
     
     /**
@@ -43,6 +47,12 @@ public class Manager extends Werknemer {
      */
     public void kenBonusToe(double bonus) {
         this.bonus = bonus;
+    }
+    
+        //Hoe implementeer ik code die checkt of en wanneer betaalSalaris() 
+        //methode is aangeroepen?
+    public void setBonusOpNul() {
+        this.bonus = 0;
     }
     
     /**

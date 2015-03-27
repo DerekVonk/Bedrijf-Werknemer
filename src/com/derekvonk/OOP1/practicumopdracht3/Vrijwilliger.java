@@ -19,7 +19,7 @@ public class Vrijwilliger extends Persoon {
     
     @Override
     public double salaris() {
-        System.out.println("Een Vrijwilliger krijgt geen salaris.\n");
+        //System.out.println("Een Vrijwilliger krijgt geen salaris.\n");
         return 0;
     }
     
