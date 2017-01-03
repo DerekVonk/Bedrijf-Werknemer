@@ -9,6 +9,7 @@ import {
 
 import Heading from './Heading';
 import Input from './Input';
+import Button from './Button';
 
 // add index on todos in the scope of App.js
 let todoIndex = 0;
@@ -24,6 +25,7 @@ export default class App extends Component {
             // todo type
             type: 'All'
         }
+        this.submitTodo = this.submitTodo.bind(this);
     }
 
     // Here the inputChange method is created, which takes inputValue as an argument.
@@ -69,6 +71,7 @@ export default class App extends Component {
                     <Input
                     inputValue={ inputValue }
                     inputChange={ (text) => this.inputChange(text) } />
+                    <Button submitTodo={this.submitTodo}/>
                 </ScrollView>
             </View>
         )
