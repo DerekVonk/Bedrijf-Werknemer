@@ -25,6 +25,8 @@ export default class App extends Component {
             // todo type
             type: 'All'
         }
+        // bind method to constructor. because we are using classes
+        // , functions will not be autobound to the class
         this.submitTodo = this.submitTodo.bind(this);
     }
 
