@@ -10,15 +10,22 @@ import {
 import Heading from './Heading';
 import Input from './Input';
 
+// add index on todos in the scope of App.js
+let todoIndex = 0;
+
 export default class App extends Component {
     constructor() {
         super()
         this.state = {
+            //array of todo's
             todos: [],
+            // inputValue (string type) to add to todo's array
             inputValue: '',
+            // todo type
             type: 'All'
         }
     }
+
     // Here the inputChange method is created, which takes inputValue as an argument.
     // this takes changes from the Input value and stores it in the state
     inputChange(inputValue) {
@@ -28,6 +35,30 @@ export default class App extends Component {
         this.setState({ inputValue });
     }
 
+    // add submitTodo function to handle added todo from submit button
+    submitTodo() {
+        // if inputValue is empty return and do nothing
+        if (this.state.inputValue.match(/^\s*$/)) {
+            return
+        }
+
+        // create todo variable
+        let todo = {
+            // give this todo object a title, index and complete boolean
+            title: this.state.inputValue,
+            todoIndex: todoIndex,
+            complete: false
+        }
+        todoIndex++
+        this.state.todos.push(todo)
+
+        this.setState(
+            {todos: this.state.todos, inputValue: ''},
+            // using an optional callback fucntion on setState to log to console
+            () => {
+                console.log('State: ', this.state)
+        })
+    }
 
     render() {
         const { inputValue } = this.state
