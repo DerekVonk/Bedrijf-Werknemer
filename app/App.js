@@ -33,6 +33,7 @@ export default class App extends Component {
         this.submitTodo = this.submitTodo.bind(this);
         this.toggleComplete = this.toggleComplete.bind(this);
         this.deleteTodo = this.deleteTodo.bind(this);
+        this.setType = this.setType.bind(this);
     }
 
     // Here the inputChange method is created, which takes inputValue as an argument.
@@ -84,9 +85,11 @@ export default class App extends Component {
         todos = this.state.todos.filter((todo) => {
             return todo.todoIndex !== todoIndex
         });
-        console.log('deleteTodo =', this.state);
-        debugger;
         this.setState({todos});
+    }
+
+    setType(type) {
+        this.setState({type});
     }
 
     render() {
