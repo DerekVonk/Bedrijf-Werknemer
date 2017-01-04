@@ -10,6 +10,7 @@ import {
 import Heading from './Heading';
 import Input from './Input';
 import Button from './Button';
+import TodoList from './TodoList';
 
 // add index on todos in the scope of App.js
 let todoIndex = 0;
@@ -65,7 +66,7 @@ export default class App extends Component {
     }
 
     render() {
-        const { inputValue } = this.state
+        const { inputValue, todos } = this.state
         return(
             <View style={ styles.container }>
                 <ScrollView style={ styles.content }>
@@ -73,7 +74,8 @@ export default class App extends Component {
                     <Input
                     inputValue={ inputValue }
                     inputChange={ (text) => this.inputChange(text) } />
-                    <Button submitTodo={this.submitTodo}/>
+                    <TodoList todos={todos} />
+                    <Button submitTodo={this.submitTodo.bind(this)}/>
                 </ScrollView>
             </View>
         )
