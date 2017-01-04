@@ -12,18 +12,24 @@ export default class TodoList extends Component{
     }
 
     render() {
+        const {todos, toggleComplete, deleteTodo} = this.props;
         // map over the todos
         // for each todo, pass the todo as a property to the Todo Component
         // specify a key index and pass the key to each Component
-        const todos = this.props.todos.map((todo, i) => {
-            return(
-                <Todo key={i} todo={todo} />
-            )
-        });
+        let todoList = todos.map((todo, i) => {
+                return(
+                    <Todo
+                        key={i}
+                        todo={todo}
+                        toggleComplete={toggleComplete}
+                        deleteTodo={deleteTodo}
+                    />
+                )
+            });
 
         return(
             <View>
-                {todos}
+                {todoList}
             </View>
         )
     }

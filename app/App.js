@@ -28,7 +28,11 @@ export default class App extends Component {
         }
         // bind method to constructor. because we are using classes
         // , functions will not be autobound to the class
+        // can also do this when using it in the render method to keep the
+        // constructor cleaner
         this.submitTodo = this.submitTodo.bind(this);
+        this.toggleComplete = this.toggleComplete.bind(this);
+        this.deleteTodo = this.deleteTodo.bind(this);
     }
 
     // Here the inputChange method is created, which takes inputValue as an argument.
@@ -61,12 +65,32 @@ export default class App extends Component {
             {todos: this.state.todos, inputValue: ''},
             // using an optional callback fucntion on setState to log to console
             () => {
-                console.log('State: ', this.state)
+                console.log('App.js state: ', this.state)
         })
     }
 
+    toggleComplete(todoIndex) {
+        let {todos} = this.state
+        todos.forEach((todo) => {
+            if (todo.todoIndex === todoIndex) {
+                todo.complete = !todo.complete
+            }
+        })
+        this.setState({todos});
+    }
+
+    deleteTodo(todoIndex) {
+        let {todos} = this.state
+        todos = this.state.todos.filter((todo) => {
+            return todo.todoIndex !== todoIndex
+        });
+        console.log('deleteTodo =', this.state);
+        debugger;
+        this.setState({todos});
+    }
+
     render() {
-        const { inputValue, todos } = this.state
+        const { inputValue, todos } = this.state;
         return(
             <View style={ styles.container }>
                 <ScrollView style={ styles.content }>
@@ -74,8 +98,11 @@ export default class App extends Component {
                     <Input
                     inputValue={ inputValue }
                     inputChange={ (text) => this.inputChange(text) } />
-                    <TodoList todos={todos} />
-                    <Button submitTodo={this.submitTodo.bind(this)}/>
+                    <TodoList
+                        toggleComplete={this.toggleComplete}
+                        deleteTodo={this.deleteTodo}
+                        todos={todos}/>
+                    <Button submitTodo={this.submitTodo}/>
                 </ScrollView>
             </View>
         )
