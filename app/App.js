@@ -11,6 +11,7 @@ import Heading from './Heading';
 import Input from './Input';
 import Button from './Button';
 import TodoList from './TodoList';
+import TabBar from './TabBar';
 
 // add index on todos in the scope of App.js
 let todoIndex = 0;
@@ -70,6 +71,9 @@ export default class App extends Component {
         })
     }
 
+    // toggleComplete method takes the index to toggle and
+    // loops over all todos currently in the state and finds
+    // the todo item that coincides with the passed index
     toggleComplete(todoIndex) {
         let {todos} = this.state
         todos.forEach((todo) => {
@@ -80,6 +84,8 @@ export default class App extends Component {
         this.setState({todos});
     }
 
+    // deleteTodo method takes the index of the selected todo
+    // and filters out this from the todos array
     deleteTodo(todoIndex) {
         let {todos} = this.state
         todos = this.state.todos.filter((todo) => {
@@ -88,25 +94,30 @@ export default class App extends Component {
         this.setState({todos});
     }
 
+    // set the type of todo for the tapbar
     setType(type) {
         this.setState({type});
     }
 
     render() {
-        const { inputValue, todos } = this.state;
+        const { inputValue, todos, type } = this.state;
         return(
-            <View style={ styles.container }>
-                <ScrollView style={ styles.content }>
+            <View style={styles.container}>
+                <ScrollView style={styles.content}>
                     <Heading />
                     <Input
-                    inputValue={ inputValue }
-                    inputChange={ (text) => this.inputChange(text) } />
+                      inputValue={inputValue}
+                      inputChange={(text) => this.inputChange(text)} />
                     <TodoList
-                        toggleComplete={this.toggleComplete}
-                        deleteTodo={this.deleteTodo}
-                        todos={todos}/>
+                      type={type}
+                      toggleComplete={this.toggleComplete}
+                      deleteTodo={this.deleteTodo}
+                      todos={todos}/>
                     <Button submitTodo={this.submitTodo}/>
                 </ScrollView>
+                <TabBar
+                  type={type}
+                  setType={this.setType}/>
             </View>
         )
     }
