@@ -100,7 +100,7 @@ export default class App extends Component {
     }
 
     render() {
-        const {inputValue, todos, type} = this.state;
+        const { inputValue, todos, type } = this.state;
         return(
             <View style={styles.container}>
                 <ScrollView style={styles.content}>

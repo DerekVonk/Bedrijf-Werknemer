@@ -12,7 +12,6 @@ export default class TabBarItem extends Component {
 
   render() {
     const {border, title, selected, setType, type} = this.props;
-
     return (
       <TouchableHighlight
         underlayColor='#efefef'

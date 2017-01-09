@@ -27,9 +27,8 @@ export default class TodoList extends Component{
               return todos.filter((t) => !t.complete)
           }
         }
-        console.log('TodoList before: ', todos)
         todos = getVisibleTodos(todos, type);
-        console.log('TodoList after ', todos);
+        console.log('TodoList31 ', todos);
 
         let todoList = todos.map((todo, i) => {
                 return(

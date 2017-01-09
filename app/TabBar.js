@@ -10,6 +10,7 @@ export default class TabBar extends Component {
     constructor(props) {
         super(props);
         console.log('TapBar props: ', this.props);
+
     }
 
     render() {
